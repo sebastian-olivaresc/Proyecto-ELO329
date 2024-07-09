@@ -26,13 +26,15 @@ string elegirDisparo(Cartuchos *cartuchos) {
  * entregue la respuesta que realiza el juego
  * true significa vacio
  */
-void realizarDescuentos(bool disparo,
-                        string persona,
+bool realizarDescuentos(int &ronda,
+                        bool disparo,
+                        string personaRecibe,
+                        string personaDispara,
                         Cartuchos *cartuchos,
                         Persona *player,
-                        Persona *dealer,
-                        int descuento) {
+                        Persona *dealer) {
 
+    bool nextRound = false;
     if (disparo) {
         cartuchos->aumentarVacios(-1);
     }
@@ -40,12 +42,24 @@ void realizarDescuentos(bool disparo,
         cartuchos->aumentarCargados(-1);
     }
 
-    if (!disparo && persona == "Player") {
+
+    int descuento = 1;
+
+    if (!disparo && personaRecibe == "Player") {
         player->aumentarVida(-1*descuento);
     }
-    else if (!disparo && persona == "Dealer"){
-        dealer->aumentarVida(-1*descuento);
+    else if (!disparo && personaRecibe == "Dealer"){
+        nextRound = dealer->aumentarVida(-1*descuento);
     }
+
+    // Resetea el damage, por si se uso sierra
+    player->setDamage(1);
+    dealer->setDamage(1);
+
+    if (nextRound) {
+        ronda++;
+    }
+    return nextRound;
 }
 
 
@@ -53,11 +67,15 @@ void realizarDescuentos(bool disparo,
 void valoresRonda(int ronda, Persona **player, Persona **dealer) {
     // Valores ronda 1
     if (ronda == 1) {
-        *player = new Persona(nullptr, 3, 1);
-        *dealer = new Persona(nullptr, 3, 1);
+        *player = new Persona(PLAYER, nullptr, 3, 1);
+        *dealer = new Persona(DEALER, nullptr, 3, 1);
     }
 
     // Valores ronda 2
+    if (ronda == 2) {
+        *player = new Persona(PLAYER, nullptr, 4, 1);
+        *dealer = new Persona(DEALER, nullptr, 4, 1);
+    }
 
     // Valores ronda 3
 }

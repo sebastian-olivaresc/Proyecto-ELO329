@@ -24,6 +24,7 @@ public:
     int getVacios();
     //---Getters---
 
+    void reset();
     bool aumentarCargados(int cantidad);
     bool aumentarVacios(int cantidad);
     float probabilidadVacios();

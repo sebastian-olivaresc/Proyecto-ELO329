@@ -58,3 +58,8 @@ bool Cartuchos::descontarCartucho(string current) {
     }
 }
 
+void Cartuchos::reset() {
+    setVacios(0);
+    setCargados(0);
+}
+

@@ -2,12 +2,13 @@
 #define INVENTARIO_H
 
 #include <vector>
-#include <string>
-
-
-using namespace std;
+#include "cartuchos.h"
+#include "item.h"
 
 class Item;
+class Persona;
+
+using namespace std;
 
 class Inventario {
 private:
@@ -15,7 +16,7 @@ private:
 
 public:
     void addItem(Item *item);
-    Item *usar(string item);
+    bool usarItem(enum Tipos item, Cartuchos &cartuchos, Persona &persona);
 };
 
 #endif // INVENTARIO_H

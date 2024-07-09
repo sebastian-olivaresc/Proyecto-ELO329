@@ -10,35 +10,54 @@ CONFIG += c++17
 
 SOURCES += \
     cartuchos.cpp \
+    cerveza.cpp \
+    cigarros.cpp \
+    decisiondealerdialog.cpp \
     decisiondialog.cpp \
     disparodialog.cpp \
+    esposas.cpp \
     gameoverwindow.cpp \
     initdialog.cpp \
     inventario.cpp \
     item.cpp \
+    itemdialog.cpp \
+    lupa.cpp \
     main.cpp \
     mainwindow.cpp \
     persona.cpp \
-    utils.cpp
+    sierra.cpp \
+    utils.cpp \
+    winround.cpp
 
 HEADERS += \
     cartuchos.h \
+    cerveza.h \
+    cigarros.h \
+    decisiondealerdialog.h \
     decisiondialog.h \
     disparodialog.h \
+    esposas.h \
     gameoverwindow.h \
     initdialog.h \
     inventario.h \
     item.h \
+    itemdialog.h \
+    lupa.h \
     mainwindow.h \
     persona.h \
-    utils.h
+    sierra.h \
+    utils.h \
+    winround.h
 
 FORMS += \
+    decisiondealerdialog.ui \
     decisiondialog.ui \
     disparodialog.ui \
     gameoverwindow.ui \
     initdialog.ui \
-    mainwindow.ui
+    itemdialog.ui \
+    mainwindow.ui \
+    winround.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

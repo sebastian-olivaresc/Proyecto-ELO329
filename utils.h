@@ -9,12 +9,13 @@ using namespace std;
 
 string elegirDisparo(Cartuchos *cartuchos);
 
-void realizarDescuentos(bool disparo,
-                        string persona,
+bool realizarDescuentos(int &ronda,
+                        bool disparo,
+                        string personaRecibe,
+                        string personaDispara,
                         Cartuchos *cartuchos,
                         Persona *player,
-                        Persona *dealer,
-                        int descuento);
+                        Persona *dealer);
 
 void valoresRonda(int ronda, Persona **player, Persona **dealer);
 

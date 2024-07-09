@@ -1,35 +1,43 @@
 #ifndef ITEM_H
 #define ITEM_H
 
-#include <string>
-#include "persona.h"
 #include "cartuchos.h"
+
+class Persona;
 
 using namespace std;
 
-class Persona;
+enum Tipos {
+    LUPA,
+    CIGARROS,
+    CERVEZA,
+    SIERRA,
+    ESPOSAS,
+};
 
 class Item {
 private:
     int cantidad;
-    string nombre;
+    enum Tipos nombre;
 
 public:
-    Item(int cantidad, string nombre);
-    string usar(Cartuchos *cartuchos, Persona *personaje, string current);
-    void usar(Persona *personaje);
+    Item(int cantidad, enum Tipos nombre);
+    //string usar(Cartuchos *cartuchos, Persona *personaje, string current);
+    virtual bool usar(Cartuchos &cartuchos, Persona &persona) = 0;
 
     //-----Setters------
     void setCantidad(int cantidad);
-    void setNombre(string nombre);
+    void setNombre(enum Tipos nombre);
     //------------------
 
     //-----Getters------
     int getCantidad();
-    string getNombre();
+    enum Tipos getNombre();
     //------------------
 
     bool aumentarCantidad(int cantidad);
 };
+
+
 
 #endif // ITEM_H

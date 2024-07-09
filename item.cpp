@@ -2,7 +2,7 @@
 
 #include "item.h"
 
-Item::Item(int cantidad, string nombre) :
+Item::Item(int cantidad, enum Tipos nombre) :
     cantidad(cantidad),
     nombre(nombre) {
 }
@@ -12,7 +12,7 @@ void Item::setCantidad(int cantidad) {
     this->cantidad = cantidad;
 }
 
-void Item::setNombre(string nombre) {
+void Item::setNombre(enum Tipos nombre) {
     this->nombre = nombre;
 }
 //---------------------------
@@ -22,7 +22,7 @@ int Item::getCantidad() {
     return cantidad;
 }
 
-string Item::getNombre() {
+enum Tipos Item::getNombre() {
     return nombre;
 }
 //---------------------------

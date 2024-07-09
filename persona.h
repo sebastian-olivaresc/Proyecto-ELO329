@@ -1,12 +1,18 @@
 #ifndef PERSONA_H
 #define PERSONA_H
 
+#include "item.h"
+#include "inventario.h"
 
-class Inventario;
+enum Nombre {
+    PLAYER,
+    DEALER,
+};
+
 class Persona
 {
 public:
-    Persona (Inventario *inventario, int vidas, int damage);
+    Persona (enum Nombre nombre, Inventario *inventario, int vidas, int damage);
 
     //---Setters---
     void setInventario(Inventario *inventario);
@@ -15,14 +21,18 @@ public:
     //---Setters---
 
     //---Getters---
+    enum Nombre getNombre();
     Inventario *getInventario();
     int getVida();
     int getDamage();
     //---Getters---
 
-    void aumentarVida(int cantidad);
+    bool aumentarVida(int cantidad);
+
+    bool usarItem(enum Tipos item, Cartuchos &cartuchos, Persona &persona);
 
 private:
+    enum Nombre nombre;
     Inventario *inventario;
     int vidas;
     int damage;
