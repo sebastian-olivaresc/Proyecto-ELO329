@@ -18,6 +18,10 @@ void DisparoDialog::setDisparo(bool disparo) {
     this->disparo = disparo;
 }
 
+// Titulo: setPersonaElegida 
+// Parametros: std::string persona 
+// Output: void
+// Funcion: Esta funcion cambia la el label de la persona en la ventana 
 void DisparoDialog::setPersonaElegida(std::string persona) {
     ui->label_jugador->setText(QString::fromStdString(persona));
 }
@@ -29,6 +33,13 @@ bool DisparoDialog::getDisparo() {
 }
 //---------------------
 
+
+//---------Botones----------
+
+// Titulo: on_pushButtonSi_clicked
+// Parametros: Ninguno
+// Output: void
+// Funcion: Esta funcion guarda el disparo como true(vacio) 
 void DisparoDialog::on_pushButtonSi_clicked()
 {
     setDisparo(true);
@@ -36,9 +47,13 @@ void DisparoDialog::on_pushButtonSi_clicked()
 }
 
 
+// Titulo: on_pushButtonNo_clicked
+// Parametros: Ninguno
+// Output: void
+// Funcion: Esta funcion guarda el disparo como false(cargado) 
 void DisparoDialog::on_pushButtonNo_clicked()
 {
     setDisparo(false);
     this->close();
 }
-
+//--------------------------

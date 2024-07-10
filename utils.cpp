@@ -2,11 +2,13 @@
 #include <iostream>
 using namespace std ;
 
-/*
- * Decide cual es el disparo mejor para el jugador
- * si es mas probable que sea vacio, se sugiere disparar al jugador
- * si es mas probable que sea cargado, se sugiere disparar al dealer
-*/
+// Titulo: elegirDisparo
+// Parametros: Cartuchos *cartuchos 
+// Output: string 
+// Funcion: Esta funcion decide cual es el mejor disparo que puede realizar el
+// Player. 
+// Si es mas probable que sea vacio, se sugiere disparar al jugador
+// Si es mas probable que sea cargado, se sugiere disparar al dealer
 string elegirDisparo(Cartuchos *cartuchos) {
     float vacios = cartuchos->probabilidadVacios();
     float cargados = cartuchos->probabilidadCargados();
@@ -21,11 +23,18 @@ string elegirDisparo(Cartuchos *cartuchos) {
 }
 
 
-/*
- * Realiza los descuentos despues de que el usuario
- * entregue la respuesta que realiza el juego
- * true significa vacio
- */
+// Titulo: realizarDescuentos 
+// Parametros:  int &ronda,
+//              bool disparo,
+//              string personaRecibe,
+//              string personaDispara,
+//              Cartuchos *cartuchos,
+//              Persona *player,
+//              Persona *dealer
+// Output: bool 
+// Funcion: Esta funcion realiza los decuentos de los cartuchos y de las vidas.
+// Se retorna true si se le gana al dealer pasando a la siguiente ronda.
+// Se retorna false, en el caso de que no avance de ronda.
 bool realizarDescuentos(int &ronda,
                         bool disparo,
                         string personaRecibe,
@@ -63,7 +72,14 @@ bool realizarDescuentos(int &ronda,
 }
 
 
-// Setea los valores de los jugadores cada ronda
+// Titulo: valoresRonda
+// Parametros:  int ronda,
+//              Persona **player,
+//              Persona **dealer
+// Output: void
+// Funcion: Esta funcion setea los valores de el player y el dealer al inicio de
+// cada ronda, la cantidad de vidas, reinicia el inventario, reinicia el damage
+// a 1.
 void valoresRonda(int ronda, Persona **player, Persona **dealer) {
     // Valores ronda 1
     if (ronda == 1) {

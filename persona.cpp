@@ -40,6 +40,13 @@ int Persona::getDamage() {
 }
 //---Getters---
 
+
+// Titulo: aumentarVida 
+// Parametros: int cantidad 
+// Output: bool 
+// Funcion: Esta funcion aumenta la vida de la persona, pudiendo ser el valor
+// ingresado positivo o negativo. Ademas, se crea y muestra la pantalla de
+// gameover si se acaban las vidas y la persona es player
 bool Persona::aumentarVida(int cantidad) {
     int current = getVida();
     if (current + cantidad <= 0) {
@@ -62,6 +69,14 @@ bool Persona::aumentarVida(int cantidad) {
     return false;
 }
 
+
+// Titulo: usarItem 
+// Parametros:  enum Tipos item,
+//              Cartuchos &cartuchos, 
+//              Persona &persona
+// Output: bool 
+// Funcion: Esta funcion realiza la accion de usar item del inventario dado por
+// el parametro item.
 bool Persona::usarItem(enum Tipos item, Cartuchos &cartuchos, Persona &persona) {
     inventario->usarItem(item, cartuchos, *this);
 }

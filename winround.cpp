@@ -6,7 +6,6 @@ WinRound::WinRound(QWidget *parent)
     , ui(new Ui::WinRound)
 {
     ui->setupUi(this);
-    //connect(ui->pushButton, &QPushButton::clicked, this, &WinRound::on_pushButton_clicked);
 }
 
 WinRound::~WinRound()
@@ -14,37 +13,16 @@ WinRound::~WinRound()
     delete ui;
 }
 
+//---------Botones----------
+
+// Titulo: on_pushButton_clicked
+// Parametros: Ninguno
+// Output: void
+// Funcion: Esta funcion muestra la ventana manda una singal a mainWindow para
+// ejecutar una funcion en aquella ventana.
 void WinRound::on_pushButton_clicked()
 {
     emit buttonClicked();
 
-    /*
-    valoresRonda(getRonda(), getPlayer(), getDealer());
-    this->close();
-*/
 }
-/*
-void WinRound::setPlayer(Persona &player) {
-    this->player = player;
-}
-
-void WinRound::setDealer(Persona &dealer) {
-    this->dealer = dealer;
-}
-
-void WinRound::setRonda(int ronda) {
-    this->ronda = ronda;
-}
-
-Persona &WinRound::getPlayer() {
-    return this->player;
-}
-
-Persona &WinRound::getDealer() {
-    return this->dealer;
-}
-
-int WinRound::getRonda() {
-    return this->ronda;
-}
-*/
+//--------------------------

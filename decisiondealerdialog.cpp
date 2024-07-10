@@ -16,6 +16,7 @@ DecisionDealerDialog::~DecisionDealerDialog()
 }
 
 
+//---------Setters------------
 void DecisionDealerDialog::setDisparo(bool disparo) {
     this->disparo = disparo;
 }
@@ -23,7 +24,10 @@ void DecisionDealerDialog::setDisparo(bool disparo) {
 void DecisionDealerDialog::setPersonaElegida(std::string persona) {
     this->personaElegida = persona;
 }
+//----------------------------
 
+
+//---------Getters------------
 std::string DecisionDealerDialog::getPersonaElegida() {
     return this->personaElegida;
 }
@@ -31,7 +35,16 @@ std::string DecisionDealerDialog::getPersonaElegida() {
 bool DecisionDealerDialog::getDisparo() {
     return this->disparo;
 }
+//----------------------------
 
+
+
+//---------Botones----------
+
+// Titulo: on_pushButtonDealer_clicked
+// Parametros: Ninguno
+// Output: void
+// Funcion: Esta funcion muestra selecciona el disparo de dealer a dealer 
 void DecisionDealerDialog::on_pushButtonDealer_clicked()
 {
     std::string persona = "Dealer";
@@ -45,6 +58,11 @@ void DecisionDealerDialog::on_pushButtonDealer_clicked()
 }
 
 
+
+// Titulo: on_pushButtonDealer_clicked
+// Parametros: Ninguno
+// Output: void
+// Funcion: Esta funcion muestra selecciona el disparo de dealer a player
 void DecisionDealerDialog::on_pushButtonPlayer_clicked()
 {
     std::string persona = "Player";
@@ -56,4 +74,5 @@ void DecisionDealerDialog::on_pushButtonPlayer_clicked()
     disparoDialog.exec();
     setDisparo(disparoDialog.getDisparo());
 }
+//-------------------------------
 

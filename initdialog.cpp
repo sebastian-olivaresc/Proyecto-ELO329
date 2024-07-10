@@ -14,14 +14,26 @@ InitDialog::~InitDialog()
     delete ui;
 }
 
-Cartuchos *InitDialog::getCartuchos() {
-    return this->cartuchos;
-}
 
+//-----Setters----
 void InitDialog::setCartuchos(int vacios, int cargados) {
     this->cartuchos = new Cartuchos(vacios, cargados);
 }
+//----------------
 
+//-----Getters----
+Cartuchos *InitDialog::getCartuchos() {
+    return this->cartuchos;
+}
+//----------------
+
+
+
+//------Botones------
+// Titulo: on_pushButton_clicked
+// Parametros: Ninguno
+// Output: void
+// Funcion: Esta funcion guarda los valores de los spinBox de los cartuchos 
 void InitDialog::on_pushButton_clicked()
 {
 
@@ -30,4 +42,5 @@ void InitDialog::on_pushButton_clicked()
     setCartuchos(vacios, cargados);
     this->close();
 }
+//-------------------
 

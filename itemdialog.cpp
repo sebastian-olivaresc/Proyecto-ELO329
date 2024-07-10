@@ -20,6 +20,17 @@ ItemDialog::~ItemDialog()
     delete ui;
 }
 
+//-----------Botones-----------
+
+// NO SE USA EN ESTA VERSION DEL SOFTWARE
+// NO SE USA EN ESTA VERSION DEL SOFTWARE
+// NO SE USA EN ESTA VERSION DEL SOFTWARE
+// NO SE USA EN ESTA VERSION DEL SOFTWARE
+
+// Titulo: on_pushButton_clicked
+// Parametros: Ninguno
+// Output: void
+// Funcion: Esta funcion crea los items para dealer y player
 void ItemDialog::on_pushButton_clicked()
 {
     Item *dealerCerveza = new Cerveza(ui->spinBoxCervezaDealer->value(), CERVEZA);
@@ -35,4 +46,4 @@ void ItemDialog::on_pushButton_clicked()
     Item *playerLupa = new Lupa(ui->spinBoxLupaPlayer->value(), LUPA);
 
 }
-
+//------------------------------
