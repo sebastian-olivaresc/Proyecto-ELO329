@@ -29,6 +29,7 @@ public:
     bool aumentarVacios(int cantidad);
     float probabilidadVacios();
     float probabilidadCargados();
+    bool descontarCartucho(string current);
 };
 
 #endif // CARTUCHOS_H
