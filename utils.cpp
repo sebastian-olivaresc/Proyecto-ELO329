@@ -95,3 +95,18 @@ void valoresRonda(int ronda, Persona **player, Persona **dealer) {
 
     // Valores ronda 3
 }
+
+// Titulo: floatToString
+// Parametros: float value, int precision
+// Output: std::string
+// Funcion: Esta funcion fromatea un valor con una dada cantidad de decimales
+std::string floatToString(float value, int precision) {
+    std::string str = std::to_string(value);
+    str = str.substr(0, str.find('.') + precision + 1); // precision total de 2 decimales
+    str.erase(str.find_last_not_of('0') + 1, std::string::npos); // Eliminar ceros a la derecha
+    if (str.back() == '.') {
+        str.pop_back(); // Eliminar el punto si es el último carácter
+    }
+    return str;
+}
+

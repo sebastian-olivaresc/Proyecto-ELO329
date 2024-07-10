@@ -67,8 +67,10 @@ void MainWindow::on_pushButton_2_clicked()
 {
     InitDialog initDialog;
     initDialog.setModal(true);
+    initDialog.setRonda(getRonda());
 
     initDialog.exec();
+
     Cartuchos *cartuchos = initDialog.getCartuchos();
     setCartuchos(cartuchos);
     updateVista();

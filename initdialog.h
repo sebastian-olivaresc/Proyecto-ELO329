@@ -17,6 +17,8 @@ public:
     ~InitDialog();
     void setCartuchos(int vacios, int cargados);
     Cartuchos *getCartuchos();
+    void setRonda(int ronda);
+    int getRonda();
 
 private slots:
     void on_pushButton_clicked();
@@ -25,6 +27,7 @@ private slots:
 private:
     Ui::InitDialog *ui;
     Cartuchos *cartuchos;
+    int ronda;
 };
 
 #endif // INITDIALOG_H

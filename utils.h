@@ -2,6 +2,7 @@
 #define UTILS_H
 
 #include <string>
+#include <cmath>
 #include "cartuchos.h"
 #include "persona.h"
 
@@ -18,5 +19,7 @@ bool realizarDescuentos(int &ronda,
                         Persona *dealer);
 
 void valoresRonda(int ronda, Persona **player, Persona **dealer);
+
+std::string floatToString(float value, int precision) ;
 
 #endif // UTILS_H

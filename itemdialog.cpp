@@ -20,12 +20,17 @@ ItemDialog::~ItemDialog()
     delete ui;
 }
 
-//-----------Botones-----------
+//----------Setters--------
+void ItemDialog::setPlayer(Persona *player) {
+    this->player = player;
+}
 
-// NO SE USA EN ESTA VERSION DEL SOFTWARE
-// NO SE USA EN ESTA VERSION DEL SOFTWARE
-// NO SE USA EN ESTA VERSION DEL SOFTWARE
-// NO SE USA EN ESTA VERSION DEL SOFTWARE
+void ItemDialog::setDealer(Persona *dealer) {
+    this->dealer = dealer;
+}
+//-------------------------
+
+//-----------Botones-----------
 
 // Titulo: on_pushButton_clicked
 // Parametros: Ninguno
@@ -44,6 +49,23 @@ void ItemDialog::on_pushButton_clicked()
     Item *playerCigarros = new Cigarros(ui->spinBoxCigarrosPlayer->value(), CIGARROS);
     Item *playerEsposas = new Esposas(ui->spinBoxEsposasPlayer->value(), ESPOSAS);
     Item *playerLupa = new Lupa(ui->spinBoxLupaPlayer->value(), LUPA);
+
+    Inventario *dealerInventario = dealer->getInventario();
+    dealerInventario->addItem(dealerCerveza);
+    dealerInventario->addItem(dealerSierra);
+    dealerInventario->addItem(dealerCigarros);
+    dealerInventario->addItem(dealerEsposas);
+    dealerInventario->addItem(dealerLupa);
+
+    Inventario *playerInventario = player->getInventario();
+    playerInventario->addItem(playerCerveza);
+    playerInventario->addItem(playerSierra);
+    playerInventario->addItem(playerCigarros);
+    playerInventario->addItem(playerEsposas);
+    playerInventario->addItem(playerLupa);
+
+    this->close();
+
 
 }
 //------------------------------
