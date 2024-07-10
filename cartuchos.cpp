@@ -49,14 +49,6 @@ bool Cartuchos::aumentarVacios(int cantidad) {
     return false;
 }
 
-bool Cartuchos::descontarCartucho(string current) {
-    if (current == "vacios") {
-        return aumentarVacios(-1);
-    }
-    else {
-        return aumentarCargados(-1);
-    }
-}
 
 void Cartuchos::reset() {
     setVacios(0);
